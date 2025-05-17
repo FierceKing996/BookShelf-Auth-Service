@@ -44,7 +44,7 @@ public class SecurityConfiguration {
                                            AuthenticationProvider authProvider,
                                            JwtAuthenticationFilter jwtFilter) throws Exception {
                 http
-                .securityMatcher("/**")  // Apply this chain to all paths
+
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
                         .anyRequest().authenticated()

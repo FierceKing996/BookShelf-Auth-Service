@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Entity
 public class User_app {
-    @Id @GeneratedValue private String id;
+    @Id @GeneratedValue private Long id;
     @Column(unique = true) @NotBlank private String username;
     @NotBlank private String password;
     @ManyToMany(fetch = FetchType.EAGER)
@@ -17,11 +17,11 @@ public class User_app {
             inverseJoinColumns=@JoinColumn(name="role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

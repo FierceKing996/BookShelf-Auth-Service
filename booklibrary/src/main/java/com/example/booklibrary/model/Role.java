@@ -10,6 +10,11 @@ public class Role {
     @Id @GeneratedValue private Long id;
     @Column(unique = true) private String name;
 
+    public Role(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    protected Role() { }
     public Long getId() {
         return id;
     }
